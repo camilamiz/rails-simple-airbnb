@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do
+  f =Flat.new
+  f.name = Faker::TheITCrowd.character
+  f.address = Faker::Address.street_address
+  f.description = Faker::TheITCrowd.quote
+  f.price_per_night = rand(100..500)
+  f.number_of_guests = rand(2..5)
+  f.save
+end
